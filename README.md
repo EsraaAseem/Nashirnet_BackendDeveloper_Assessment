@@ -9,16 +9,16 @@ built with Clean Architecture.
 - JWT Authentication
 
 ## Project Structure
-TaskManagement/
-## ProductManagement.Web/   
+TaskManagement
+## ProductManagement.Web 
  Web Layer (Controllers, Views)
-## ProductManagement.Application/  
+## ProductManagement.Application
  Business Logic (Services, DTOs, Interfaces)
-## ProductManagement.Domain/      
+## ProductManagement.Domain      
  Domain Layer (Entities, Enums)
-## ProductManagement.Infrastructure/ 
+## ProductManagement.Infrastructure
  External Services (JWT, Hashing Service)
-## ProductManagement.Persistence/ 
+## ProductManagement.Persistence
  Database Layer (DbContext, Repositories, Seeders)
 ## Prerequisites
 
@@ -53,8 +53,6 @@ cd ProductManagement
 
 Create the database and apply EF Core migrations.
 Seed Categories and Products from the provided JSON files (SeedData/categories.json, SeedData/products.json).
-
- ## Code of Honor: I confirm the submitted work is my own and was completed without AI code-generation tools.  — <Your Name>, <Date>
-
 Seed the three roles (Sales, InventoryManager, Admin) and their category/column permissions, per the permission matrix in the brief.
+ ## Code of Honor: I confirm the submitted work is my own and was completed without AI code-generation tools.  —  Esraa Aseem, 05/07/2026
 
