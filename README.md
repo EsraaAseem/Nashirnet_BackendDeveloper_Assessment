@@ -10,16 +10,16 @@ built with Clean Architecture.
 
 ## Project Structure
 TaskManagement/
--ProductManagement.Web/   
-# Web Layer (Controllers, Views)
-- ProductManagement.Application/  
-# Business Logic (Services, DTOs, Interfaces)
-- ProductManagement.Domain/      
-# Domain Layer (Entities, Enums)
-- ProductManagement.Infrastructure/ 
-# External Services (JWT, Hashing Service)
-- ProductManagement.Persistence/ 
-# Database Layer (DbContext, Repositories, Seeders)
+## ProductManagement.Web/   
+ Web Layer (Controllers, Views)
+## ProductManagement.Application/  
+ Business Logic (Services, DTOs, Interfaces)
+## ProductManagement.Domain/      
+ Domain Layer (Entities, Enums)
+## ProductManagement.Infrastructure/ 
+ External Services (JWT, Hashing Service)
+## ProductManagement.Persistence/ 
+ Database Layer (DbContext, Repositories, Seeders)
 ## Prerequisites
 
 - [.NET 9 SDK](https://dotnet.microsoft.com/download)
