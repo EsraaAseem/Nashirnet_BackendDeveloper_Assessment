@@ -1,0 +1,72 @@
+﻿@model List<ProductManagement.Application.Models.ProductModels.ProductListItemDto>
+
+<h2>Products</h2>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+
+@if (!Model.Any())
+{
+    <p>No products available.</p>
+}
+else
+{
+    bool showDescription = Model.Any(p => p.Description != null);
+    bool showSize = Model.Any(p => p.Size != null);
+    bool showWholesale = Model.Any(p => p.WholesalePrice != null);
+    bool showSale = Model.Any(p => p.SalePrice != null);
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Icon</th>
+                <th>Name</th>
+                <th>Category</th>
+                @if (showDescription)
+                {
+                    <th>Description</th>
+                }
+                @if (showSize)
+                {
+                    <th>Size</th>
+                }
+                @if (showWholesale)
+                {
+                    <th>Wholesale Price</th>
+                }
+                @if (showSale)
+                {
+                    <th>Sale Price</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@Html.Raw(p.IconSvg)</td>
+                    <td>@p.Name</td>
+                    <td>@p.Category</td>
+                    @if (showDescription)
+                    {
+                        <td>@p.Description</td>
+                    }
+                    @if (showSize)
+                    {
+                        <td>@p.Size</td>
+                    }
+                    @if (showWholesale)
+                    {
+                        <td>@p.WholesalePrice?.ToString("C")</td>
+                    }
+                    @if (showSale)
+                    {
+                        <td>@p.SalePrice?.ToString("C")</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,39 @@
+﻿@model ProductManagement.Application.Models.AuthModels.RegisterRequest
+
+<h2>Register</h2>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<form asp-action="Register" method="post">
+    <div class="mb-3">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Email</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Password</label>
+        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Role</label>
+
+        <select asp-for="RoleId"
+                asp-items="@(new SelectList(ViewBag.Roles, "Id", "Name"))"
+                class="form-control">
+
+            <option value="">-- Select Role --</option>
+        </select>
+
+        <span asp-validation-for="RoleId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
